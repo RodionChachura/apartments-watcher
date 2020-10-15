@@ -22,16 +22,20 @@ const findApartments = async () => {
 
     const apartmentsCards = [...document.getElementsByClassName(APARTMENT_CLASS_NAME)]
       .filter(card => !card.className.includes('banner'))
-    console.log(apartmentsCards)
-    
-    const apartments = apartmentsCards.map(card => {
-      const [id, date] = [...card.getElementsByClassName(CARD_RIGHT_INFO_CLASS_NAME)]
-        .map(info => info.innerText)
 
+    const year = new Date().getFullYear()
+    const apartments = apartmentsCards.map(card => {
+      const [rawId, rawDate] = [...card.getElementsByClassName(CARD_RIGHT_INFO_CLASS_NAME)]
+      .map(info => info.innerText)
+      
+      const [day, monthString, time] = rawDate.split(' ')
+      const rawDateWithYear = [day, monthString, year, time].join(' ')
+      const date = new Date(rawDateWithYear).getTime()
+      const id = rawId.split(' ')[1]
       return ({
         url: card.children[0].href,
-        id: id,
-        date: date,
+        id,
+        date,
         ad: card.getElementsByClassName(AD_LABEL).length > 0
       })
     })
