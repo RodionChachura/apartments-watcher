@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer')
 
 const Storage = require('./storage')
 
-const APARTMENTS_PAGE = 'https://www.myhome.ge/en/s/Newly-finished-apartment-for-sale-Tbilisi?Keyword=Tbilisi&AdTypeID=1&PrTypeID=1&mapC=41.73188365%2C44.8368762993663&regions=687602533.687586034&districts=2172993612.671983000.5469869.5995653.2022621279&cities=1996871&GID=1996871&EstateTypeID=1.3&FPriceFrom=20000&FPriceTo=60000&FCurrencyID=1&AreaSizeFrom=40&FloorNums=notlast.notfirst&RoomNums=1.2.3&RenovationID=1.6'
+const APARTMENTS_PAGE = 'https://www.myhome.ge/en/s/Newly-finished-apartment-for-sale-Tbilisi?Keyword=Tbilisi&AdTypeID=1&PrTypeID=1&mapC=41.73188365%2C44.8368762993663&regions=687602533.687586034&districts=2022621279.2172993612.5469869.5995653&cities=1996871&GID=1996871&EstateTypeID=1.3&FPriceFrom=20000&FPriceTo=65000&FCurrencyID=1&AreaSizeFrom=40&FloorNums=notlast.notfirst&RoomNums=2&RenovationID=1.6'
 const DEFAULT_DAYS_AGO = 2
 const MS_IN_DAY = 86400000
 
